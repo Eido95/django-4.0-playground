@@ -1,6 +1,6 @@
-# Django 4.0 Introductory 
+# Django 4.0 Playground
 
-https://docs.djangoproject.com/en/4.0/intro/
+https://docs.djangoproject.com/en/4.0/
 
 ## What to read next
 
