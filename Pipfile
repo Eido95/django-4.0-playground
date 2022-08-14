@@ -5,7 +5,6 @@ name = "pypi"
 
 [packages]
 django = "*"
-django-polls = {editable = true, ref = "master", git = "https://github.com/Eido95/django-polls.git"}
 
 [dev-packages]
 
