@@ -8,5 +8,9 @@
         <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
     {% endfor %}
 </fieldset>
-<input type="submit" value="Vote">
+    {% if question.opened %}
+        <input type="submit" value="Vote">
+    {% else %}
+        <input type="submit" value="Vote" title="Closed" disabled>
+    {% endif %}
 </form>

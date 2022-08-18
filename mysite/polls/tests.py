@@ -1,5 +1,8 @@
 import datetime
+from io import StringIO
+from unittest.mock import MagicMock, patch
 
+from django.core.management import call_command
 from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
@@ -126,3 +129,12 @@ class QuestionDetailViewTests(TestCase):
         url = reverse('polls:detail', args=(past_question.id,))
         response = self.client.get(url)
         self.assertContains(response, past_question.question_text)
+
+
+@patch("polls.models.Question", new=MagicMock())
+class ClosepollCommandTest(TestCase):
+    def test_command_output(self):
+        out = StringIO()
+        poll_ids = [2, 3]
+        call_command('closepoll', poll_ids, stdout=out)
+        self.assertIn('Successfully closed poll', out.getvalue())

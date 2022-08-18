@@ -10,7 +10,19 @@ https://docs.djangoproject.com/en/4.0/
   * ✅ [Third-party distributions of Django](https://docs.djangoproject.com/en/4.0/misc/distributions/)
 * [“How-to” guides](https://docs.djangoproject.com/en/4.0/howto/)
   * ❌ [How to authenticate using `REMOTE_USER`](https://docs.djangoproject.com/en/4.0/howto/auth-remote-user/)
-  * 🚧 [How to create custom `django-admin` commands](https://docs.djangoproject.com/en/4.0/howto/custom-management-commands/)
+  * ✅ [How to create custom `django-admin` commands](https://docs.djangoproject.com/en/4.0/howto/custom-management-commands/)
+  * ✅ [How to create database migrations](https://docs.djangoproject.com/en/4.0/howto/writing-migrations/)
 * [Using Django (topics)](https://docs.djangoproject.com/en/4.0/topics/)
+  * ✅ [Models](https://docs.djangoproject.com/en/4.0/topics/db/models/)
+  * ✅ [Migrations](https://docs.djangoproject.com/en/4.0/topics/migrations/)
+    * 🧰 [Serializing values](https://docs.djangoproject.com/en/4.0/topics/migrations/#serializing-values)
 * [Django FAQ](https://docs.djangoproject.com/en/4.0/faq/)
 * [General Index](https://docs.djangoproject.com/en/4.0/genindex/)
+* [API Reference](https://docs.djangoproject.com/en/4.0/ref/)
+  * 🧰 [Field options](https://docs.djangoproject.com/en/4.0/ref/models/fields/#field-options)
+  * 🧰 [Field types](https://docs.djangoproject.com/en/4.0/ref/models/fields/#model-field-types)
+
+## Insights
+
+* Prefer intermediate model (using `through` argument) over 
+  plain `ManyToManyField` (due to migration [overhead](https://docs.djangoproject.com/en/4.0/howto/writing-migrations/#changing-a-manytomanyfield-to-use-a-through-model))
