@@ -13,4 +13,10 @@
     {% else %}
         <input type="submit" value="Vote" title="Closed" disabled>
     {% endif %}
+    {% if question.address %}
+        <p>Alternatively, you can vote at:</p>
+            <ul>
+                <li>{{ question.address.pretty_print }}</li>
+            </ul>
+    {% endif %}
 </form>

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/
   * ❌ [How to authenticate using `REMOTE_USER`](https://docs.djangoproject.com/en/4.0/howto/auth-remote-user/)
   * ✅ [How to create custom `django-admin` commands](https://docs.djangoproject.com/en/4.0/howto/custom-management-commands/)
   * ✅ [How to create database migrations](https://docs.djangoproject.com/en/4.0/howto/writing-migrations/)
+  * ✅ [How to create custom model fields](https://docs.djangoproject.com/en/4.0/howto/custom-model-fields/)
 * [Using Django (topics)](https://docs.djangoproject.com/en/4.0/topics/)
   * ✅ [Models](https://docs.djangoproject.com/en/4.0/topics/db/models/)
   * ✅ [Migrations](https://docs.djangoproject.com/en/4.0/topics/migrations/)
