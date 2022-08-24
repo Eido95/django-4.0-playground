@@ -27,3 +27,8 @@ https://docs.djangoproject.com/en/4.0/
 
 * Prefer intermediate model (using `through` argument) over 
   plain `ManyToManyField` (due to migration [overhead](https://docs.djangoproject.com/en/4.0/howto/writing-migrations/#changing-a-manytomanyfield-to-use-a-through-model))
+
+## Issues
+
+* When executing `startapp`, ask for permission to continue if `manage.py` 
+  file not exists in working directory.
