@@ -13,6 +13,10 @@ class Blog(models.Model):
         return self.name
 
 
+class ThemeBlog(Blog):
+    theme = models.CharField(max_length=200)
+
+
 class Author(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
