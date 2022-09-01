@@ -40,6 +40,11 @@ class Entry(models.Model):
         return self.headline
 
 
+class EntryDetail(models.Model):
+    entry = models.OneToOneField(Entry, on_delete=models.CASCADE)
+    details = models.TextField()
+
+
 class Dog(models.Model):
     name = models.CharField(max_length=200)
     data = models.JSONField(null=True)
