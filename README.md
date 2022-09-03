@@ -13,22 +13,35 @@ https://docs.djangoproject.com/en/4.0/
   * ✅ [How to create custom `django-admin` commands](https://docs.djangoproject.com/en/4.0/howto/custom-management-commands/)
   * ✅ [How to create database migrations](https://docs.djangoproject.com/en/4.0/howto/writing-migrations/)
   * ✅ [How to create custom model fields](https://docs.djangoproject.com/en/4.0/howto/custom-model-fields/)
+  * ✅ [How to write custom lookups](https://docs.djangoproject.com/en/4.0/howto/custom-lookups/)
+    * 🧰 [How Django determines the lookups and transforms which are used](https://docs.djangoproject.com/en/4.0/howto/custom-lookups/#how-django-determines-the-lookups-and-transforms-which-are-used)
 * [Using Django (topics)](https://docs.djangoproject.com/en/4.0/topics/)
   * ✅ [Models](https://docs.djangoproject.com/en/4.0/topics/db/models/)
+  * ✅ [Making queries](https://docs.djangoproject.com/en/4.0/topics/db/queries/)
+    * 🧰 [Caching and QuerySets](https://docs.djangoproject.com/en/4.0/topics/db/queries/#caching-and-querysets)
+    * 🧰 [Additional methods to handle related objects](https://docs.djangoproject.com/en/4.0/topics/db/queries/#additional-methods-to-handle-related-objects)
   * ✅ [Migrations](https://docs.djangoproject.com/en/4.0/topics/migrations/)
     * 🧰 [Serializing values](https://docs.djangoproject.com/en/4.0/topics/migrations/#serializing-values)
 * [Django FAQ](https://docs.djangoproject.com/en/4.0/faq/)
+  * 🧰 [How can I see the raw SQL queries Django is running?](https://docs.djangoproject.com/en/4.0/faq/models/#how-can-i-see-the-raw-sql-queries-django-is-running)
 * [General Index](https://docs.djangoproject.com/en/4.0/genindex/)
 * [API Reference](https://docs.djangoproject.com/en/4.0/ref/)
   * 🧰 [Field options](https://docs.djangoproject.com/en/4.0/ref/models/fields/#field-options)
   * 🧰 [Field types](https://docs.djangoproject.com/en/4.0/ref/models/fields/#model-field-types)
+  * 🧰 [Field lookups](https://docs.djangoproject.com/en/4.0/ref/models/querysets/#field-lookups)
+  * 🧰 [When QuerySets are evaluated](https://docs.djangoproject.com/en/4.0/ref/models/querysets/#when-querysets-are-evaluated)
 
 ## Insights
 
 * Prefer intermediate model (using `through` argument) over 
   plain `ManyToManyField` (due to migration [overhead](https://docs.djangoproject.com/en/4.0/howto/writing-migrations/#changing-a-manytomanyfield-to-use-a-through-model))
+* Prefer `None` over `Value(null)` as the top-level value 
+  of `JSONField(null=True)` following [recommendation](https://docs.djangoproject.com/en/4.0/topics/db/queries/#storing-and-querying-for-none)
 
 ## Issues
 
 * When executing `startapp`, ask for permission to continue if `manage.py` 
   file not exists in working directory.
+
+## Questions
+* What is "parenthetical grouping" in [Complex lookups with Q objects](https://docs.djangoproject.com/en/4.0/topics/db/queries/#complex-lookups-with-q-objects)?
