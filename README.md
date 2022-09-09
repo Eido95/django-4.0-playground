@@ -15,6 +15,7 @@ https://docs.djangoproject.com/en/4.0/
   * ✅ [How to create custom model fields](https://docs.djangoproject.com/en/4.0/howto/custom-model-fields/)
   * ✅ [How to write custom lookups](https://docs.djangoproject.com/en/4.0/howto/custom-lookups/)
     * 🧰 [How Django determines the lookups and transforms which are used](https://docs.djangoproject.com/en/4.0/howto/custom-lookups/#how-django-determines-the-lookups-and-transforms-which-are-used)
+  * ❌ [How to implement a custom template backend](https://docs.djangoproject.com/en/4.0/howto/custom-template-backend/)
 * [Using Django (topics)](https://docs.djangoproject.com/en/4.0/topics/)
   * ✅ [Models](https://docs.djangoproject.com/en/4.0/topics/db/models/)
   * ✅ [Making queries](https://docs.djangoproject.com/en/4.0/topics/db/queries/)
@@ -22,6 +23,7 @@ https://docs.djangoproject.com/en/4.0/
     * 🧰 [Additional methods to handle related objects](https://docs.djangoproject.com/en/4.0/topics/db/queries/#additional-methods-to-handle-related-objects)
   * ✅ [Migrations](https://docs.djangoproject.com/en/4.0/topics/migrations/)
     * 🧰 [Serializing values](https://docs.djangoproject.com/en/4.0/topics/migrations/#serializing-values)
+    * 🛡 [Cross site request forgery (CSRF) protection](https://docs.djangoproject.com/en/4.0/topics/security/#cross-site-request-forgery-csrf-protection)
 * [Django FAQ](https://docs.djangoproject.com/en/4.0/faq/)
   * 🧰 [How can I see the raw SQL queries Django is running?](https://docs.djangoproject.com/en/4.0/faq/models/#how-can-i-see-the-raw-sql-queries-django-is-running)
 * [General Index](https://docs.djangoproject.com/en/4.0/genindex/)
@@ -30,6 +32,7 @@ https://docs.djangoproject.com/en/4.0/
   * 🧰 [Field types](https://docs.djangoproject.com/en/4.0/ref/models/fields/#model-field-types)
   * 🧰 [Field lookups](https://docs.djangoproject.com/en/4.0/ref/models/querysets/#field-lookups)
   * 🧰 [When QuerySets are evaluated](https://docs.djangoproject.com/en/4.0/ref/models/querysets/#when-querysets-are-evaluated)
+  * 🛡️ [Cross Site Request Forgery protection](https://docs.djangoproject.com/en/4.0/ref/csrf/)
 
 ## Insights
 
