@@ -12,7 +12,7 @@ from django.views import generic, View
 # To use cookies-based sessions, set the SESSION_ENGINE setting
 # to "django.contrib.sessions.backends.signed_cookies".
 class IndexView(generic.TemplateView):
-    template_name = "playground/sessions/index.html"
+    template_name = "playground/sessions.html"
     extra_context = {"session": {}}
 
     def get(self, request, *args, **kwargs):
