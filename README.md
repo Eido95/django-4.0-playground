@@ -21,9 +21,12 @@ https://docs.djangoproject.com/en/4.0/
   * ✅ [Making queries](https://docs.djangoproject.com/en/4.0/topics/db/queries/)
     * 🧰 [Caching and QuerySets](https://docs.djangoproject.com/en/4.0/topics/db/queries/#caching-and-querysets)
     * 🧰 [Additional methods to handle related objects](https://docs.djangoproject.com/en/4.0/topics/db/queries/#additional-methods-to-handle-related-objects)
+  * ✅ [Class-based views](https://docs.djangoproject.com/en/4.0/topics/class-based-views/#class-based-views)
+    * ✅ [Introduction to class-based views](Introduction to class-based views)
   * ✅ [Migrations](https://docs.djangoproject.com/en/4.0/topics/migrations/)
     * 🧰 [Serializing values](https://docs.djangoproject.com/en/4.0/topics/migrations/#serializing-values)
-    * 🛡 [Cross site request forgery (CSRF) protection](https://docs.djangoproject.com/en/4.0/topics/security/#cross-site-request-forgery-csrf-protection)
+  * 🛡 [Cross site request forgery (CSRF) protection](https://docs.djangoproject.com/en/4.0/topics/security/#cross-site-request-forgery-csrf-protection)
+  * ✅ [How to use sessions](https://docs.djangoproject.com/en/4.0/topics/http/sessions/)
 * [Django FAQ](https://docs.djangoproject.com/en/4.0/faq/)
   * 🧰 [How can I see the raw SQL queries Django is running?](https://docs.djangoproject.com/en/4.0/faq/models/#how-can-i-see-the-raw-sql-queries-django-is-running)
 * [General Index](https://docs.djangoproject.com/en/4.0/genindex/)
@@ -33,6 +36,7 @@ https://docs.djangoproject.com/en/4.0/
   * 🧰 [Field lookups](https://docs.djangoproject.com/en/4.0/ref/models/querysets/#field-lookups)
   * 🧰 [When QuerySets are evaluated](https://docs.djangoproject.com/en/4.0/ref/models/querysets/#when-querysets-are-evaluated)
   * 🛡️ [Cross Site Request Forgery protection](https://docs.djangoproject.com/en/4.0/ref/csrf/)
+  * 🧰 [Sessions Settings](https://docs.djangoproject.com/en/4.0/ref/settings/#sessions)
 
 ## Insights
 

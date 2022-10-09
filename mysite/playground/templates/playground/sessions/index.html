@@ -1,0 +1,108 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'playground/style.css' %}">
+
+<h1>Sessions</h1>
+
+<h2>request.session</h2>
+
+<form action="{% url 'playground:sessions' %}" method="post">
+{% csrf_token %}
+<fieldset>
+    <p>Model: {{ session.model }}</p>
+    <p>Model session data: {{ session.model.session_data }}</p>
+    <p>Model decoded session data: {{ session.model.get_decoded }}</p>
+    <p>Model session expire date: {{ session.model.expire_date }}</p>
+    <p>Model session store class: {{ session.model.get_session_store_class }}</p>
+</fieldset>
+<fieldset>
+    <p>Dictionary: {{ session.dict }} </p>
+    <p>Object: {{ session.object }} </p>
+    <p>Session key: {{ session.object.session_key }} </p>
+    <p>Session expiry age: {{ session.object.get_expiry_age }} </p>
+    <p>Session expiry date: {{ session.object.get_expiry_date }} </p>
+    <p>Session expire at browser close?: {{ session.object.get_expire_at_browser_close }} </p>
+    <p>Session modified?: {{ session.object.modified }} </p>
+    <p>Session test cookie worked?: {{ session.object.test_cookie_worked }} </p>
+    <p>Session cookie age: {{ session.object.get_session_cookie_age }} </p>
+</fieldset>
+<fieldset>
+    <p>Set session item:
+        <input type="text" name="set-item-key" placeholder="key"/>
+        <input type="text" name="set-item-value" placeholder="value"/>
+    </p>
+    <p>Get session item:
+        <input type="text" name="get-item-key" value="{{ session.get_item.key }}" placeholder="key"/>
+        <input type="text" value="{{ session.get_item.value }}" disabled/>
+    </p>
+    <p>Delete session item:
+        <input type="text" name="delete-item-key" value="{{ session.delete_item.key }}" placeholder="key"/>
+        <input type="text" value="{{ session.delete_item.status }}" disabled/>
+    </p>
+    <p>Set session expiry:
+        <input type="text" name="set-expiry-value" value="{{ session.set_expiry.value }}" placeholder="value"/>
+        <ul>
+            <li>`300` would make the session expire in 5 minutes.</li>
+            <li>`datetime` or `timedelta` object would make the session expire at that specific date/time.</li>
+            <li>`0` would make the session expire when the user’s web browser is closed.</li>
+            <li>`None` would make the session reverts to using the global session expiry policy.</li>
+        </ul>
+    </p>
+    <p>Session object guidelines:
+        <ul>
+            <li>Use normal Python strings as dictionary keys on request.session.
+                This is more of a convention than a hard-and-fast rule.</li>
+            <li>Session dictionary keys that begin with an underscore are reserved for internal use by Django.</li>
+            <li>Don’t override request.session with a new object, and don’t access or set its attributes.
+            Use it like a Python dictionary.</li>
+        </ul>
+    </p>
+</fieldset>
+<input type="submit"/>
+</form>
+
+<form class="inline-form" action="{% url 'playground:sessions-clear' %}" method="post">
+{% csrf_token %}
+<input type="submit" value="Clear Session"/>
+</form>
+
+<form class="inline-form" action="{% url 'playground:sessions-flush' %}" method="post">
+{% csrf_token %}
+<input type="submit" value="Flush Session"/>
+</form>
+
+<form class="inline-form" action="{% url 'playground:sessions-test-cookie' %}" method="post">
+{% csrf_token %}
+<input type="submit" value="Set Test Cookie" name="set-test-cookie" />
+<input type="submit" value="Delete Test Cookie" name="delete-test-cookie" />
+</form>
+
+<form class="inline-form" action="{% url 'playground:sessions-clear-expired' %}" method="post">
+{% csrf_token %}
+<input class="inline-form" type="submit" value="Clear Expired Session" />
+</form>
+
+<form class="inline-form" action="{% url 'playground:sessions-cycle-key' %}" method="post">
+{% csrf_token %}
+<input type="submit" value="Session Cycle Key" />
+</form>
+
+<form class="inline-form" action="{% url 'playground:sessions-cycle-key' %}" method="post">
+{% csrf_token %}
+<input type="submit" value="Session Cycle Key" />
+</form>
+
+<form class="inline-form" action="{% url 'playground:sessions-modified' %}" method="post">
+{% csrf_token %}
+<input type="submit" value="Modify Session Explicitly" />
+</form>
+
+<h2>Settings</h2>
+
+<form>
+    <fieldset>
+        {% for key, value in session.settings.items %}
+        <p>{{ key }}: {{ value }}</p>
+        {% endfor %}
+    </fieldset>
+</form>
