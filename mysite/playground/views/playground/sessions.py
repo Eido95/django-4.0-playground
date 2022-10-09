@@ -85,7 +85,7 @@ class IndexView(generic.TemplateView):
             "SESSION_COOKIE_SECURE": global_settings.SESSION_COOKIE_SECURE,
             "SESSION_ENGINE": global_settings.SESSION_ENGINE,
             "SESSION_EXPIRE_AT_BROWSER_CLOSE": global_settings.SESSION_EXPIRE_AT_BROWSER_CLOSE,
-            "SESSION_FILE_PATH": global_settings.SESSION_FILE_PATH,
+            "SESSION_FILE_PATH (default: tempfile.gettempdir())": global_settings.SESSION_FILE_PATH,
             "SESSION_SAVE_EVERY_REQUEST": global_settings.SESSION_SAVE_EVERY_REQUEST,
             "SESSION_SERIALIZER": global_settings.SESSION_SERIALIZER
         }

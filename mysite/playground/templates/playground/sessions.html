@@ -102,7 +102,19 @@
 <form>
     <fieldset>
         {% for key, value in session.settings.items %}
-        <p>{{ key }}: {{ value }}</p>
+        <p>{{ key }}: {{ value }}
+            {% if key == "SESSION_ENGINE" %}
+            (See available engines below)
+            <ul>
+                <li>Database-backed sessions: django.contrib.sessions.backends.db</li>
+                <li>File-based sessions: django.contrib.sessions.backends.file</li>
+                <li>Cached sessions (persistent): django.contrib.sessions.backends.cache</li>
+                <li>Cached sessions: django.contrib.sessions.backends.cached_db</li>
+                <li>Cookie-based sessions: django.contrib.sessions.backends.signed_cookies</li>
+            </ul>
+            {% else %}
+        </p>
+            {% endif %}
         {% endfor %}
     </fieldset>
 </form>
