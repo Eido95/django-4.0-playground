@@ -27,6 +27,7 @@ https://docs.djangoproject.com/en/4.0/
     * 🧰 [Serializing values](https://docs.djangoproject.com/en/4.0/topics/migrations/#serializing-values)
   * 🛡 [Cross site request forgery (CSRF) protection](https://docs.djangoproject.com/en/4.0/topics/security/#cross-site-request-forgery-csrf-protection)
   * ✅ [How to use sessions](https://docs.djangoproject.com/en/4.0/topics/http/sessions/)
+  * 🚧 [User authentication in Django](https://docs.djangoproject.com/en/4.0/topics/auth/)
 * [Django FAQ](https://docs.djangoproject.com/en/4.0/faq/)
   * 🧰 [How can I see the raw SQL queries Django is running?](https://docs.djangoproject.com/en/4.0/faq/models/#how-can-i-see-the-raw-sql-queries-django-is-running)
 * [General Index](https://docs.djangoproject.com/en/4.0/genindex/)

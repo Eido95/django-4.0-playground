@@ -1,0 +1,16 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'playground/style.css' %}">
+
+<h1>Authentication</h1>
+
+<h2>User '{{ user }}'</h2>
+
+<form method="post">
+{% csrf_token %}
+<fieldset>
+  <legend><h3>Details</h3></legend>
+  <p><em>Are you sure you want to delete '{{ user }}'?</em></p>
+</fieldset>
+<input type="submit" value="Confirm"/>
+</form>

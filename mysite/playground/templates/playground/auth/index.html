@@ -1,0 +1,10 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'playground/style.css' %}">
+
+<h1>Authentication</h1>
+
+<h2>Views:</h2>
+<ul>
+    <li><a href="{% url 'playground:auth-users' %}">{% url 'playground:auth-users' %}</a></li>
+</ul>

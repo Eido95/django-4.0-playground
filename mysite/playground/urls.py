@@ -1,7 +1,6 @@
 from django.urls import path
 
-from playground import views
-from playground.views.playground import index, sessions
+from playground.views.playground import index, sessions, auth
 
 app_name = 'playground'
 
@@ -18,5 +17,11 @@ urlpatterns = [
     path('sessions/flush/', sessions.FlushView.as_view(), name='sessions-flush'),
     path('sessions/test-cookie/', sessions.TestCookieView.as_view(), name='sessions-test-cookie'),
     path('sessions/cycle-key/', sessions.CycleKeyView.as_view(), name='sessions-cycle-key'),
-    path('sessions/modified/', sessions.ModifiedView.as_view(), name='sessions-modified')
+    path('sessions/modified/', sessions.ModifiedView.as_view(), name='sessions-modified'),
+
+    path('auth/', auth.IndexView.as_view(), name="auth"),
+    path('auth/users/', auth.UsersIndexView.as_view(), name="auth-users"),
+    path('auth/users/<int:pk>/', auth.UserView.as_view(), name="auth-user"),
+    path('auth/users/<int:pk>/password', auth.UserPasswordView.as_view(), name="auth-user-password"),
+    path('auth/users/<int:pk>/confirm-delete/', auth.UserDeleteConfirmView.as_view(), name="auth-user-delete-confirm"),
 ]

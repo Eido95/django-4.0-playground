@@ -1,0 +1,78 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'playground/style.css' %}">
+
+<h1>Authentication</h1>
+
+<h2>Users</h2>
+
+<form>
+  <fieldset>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Is Active?</th>
+          <th>Is Anonymous?</th>
+          <th>Is Authenticated?</th>
+          <th>Is Staff?</th>
+          <th>Is Superuser?</th>
+          <th>Date Joined (UTC)</th>
+          <th>Last Login (UTC)</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for user in users_context.users %}
+        <tr>
+          <td><a href="{% url 'playground:auth-user' user.id %}">{{ user.id }}</a></td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.is_active }}</td>
+          <td>{{ user.is_anonymous }}</td>
+          <td>{{ user.is_authenticated }}</td>
+          <td>{{ user.is_staff }}</td>
+          <td>{{ user.is_superuser }}</td>
+          <td>{{ user.date_joined }}</td>
+          <td>{{ user.last_login }}</td>
+          <td>{{ user.password }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <p>Total users: {{ users_context.users|length }}</p>
+    </fieldset>
+</form>
+
+<form action="{% url 'playground:auth-users' %}" method="post">
+{% csrf_token %}
+<fieldset>
+  <legend><h3>Create User</h3></legend>
+  <p>Username: <input type="text" name="username" maxlength="150" placeholder="username" required/></p>
+  <p>Password: <input type="password" name="password" maxlength="128" placeholder="password" required/></p>
+  <p>Email: <input type="email" name="email" placeholder="email"/></p>
+  <p>First Name: <input type="text" name="first-name" maxlength="150" placeholder="First Name"/></p>
+  <p>Last Name: <input type="text" name="last-name" maxlength="150" placeholder="Last Name"/></p>
+  <p>Is Staff?: <input type="checkbox" name="is-staff"/></p>
+  {% if users_context.created_user %}
+  <p><em>Created '{{ users_context.created_user }}'</em></p>
+  {% endif %}
+</fieldset>
+<input type="submit" value="Create User"/>
+</form>
+
+<h2>Settings</h2>
+
+<form>
+  <fieldset>
+    {% for key, value in users_context.settings.items %}
+    <p>{{ key }}: {{ value }}</p>
+    {% endfor %}
+  </fieldset>
+</form>
